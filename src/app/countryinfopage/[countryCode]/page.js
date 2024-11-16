@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
+import Chart from './components/chart';
 
 export default async function CountryInfoPage({ params }) {
   const { countryCode } = params;
@@ -35,13 +36,7 @@ export default async function CountryInfoPage({ params }) {
         </ul>
 
         <h3>Population History:</h3>
-        <ul>
-          {countryInfo.populationHistory?.map((entry) => (
-            <li key={entry.year}>
-              {entry.year}: {entry.population.toLocaleString()}
-            </li>
-          ))}
-        </ul>
+        <Chart countryInfo={countryInfo} />
       </div>
     );
   } catch (error) {
