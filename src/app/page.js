@@ -13,7 +13,7 @@ export default async function CountriesPage() {
       <ul>
         {countries.map((country) => (
           <li key={country.countryCode}>
-            <Link href={`/country-info/${country.countryCode}`}>
+            <Link href={`/countryinfopage/${country.countryCode}`}>
               {country.name}
             </Link>
           </li>
